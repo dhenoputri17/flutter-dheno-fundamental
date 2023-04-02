@@ -3,16 +3,82 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-   const MyApp({super.key});
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Mini Project',
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('Calculator'),
-            backgroundColor: Colors.blueAccent,
+            title:const Text('Calculator'),
+            backgroundColor:const Color.fromARGB(255, 8, 81, 206),
           ),
+          body: Container(
+            margin: EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+               const Text(
+                  'Result :', 
+                  textAlign: TextAlign.start,
+                  style: TextStyle(fontSize: 26, color: Colors.black, fontWeight: FontWeight.bold),
+                ), 
+                Text('0',
+                  style: TextStyle(fontSize: 26, color: Colors.black),
+                ),
+                SizedBox(height: 10,),
+               const TextField(
+                  decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 223, 220, 220),
+                    filled: true,
+                    hintText: "Enter first number"
+                  )
+                ),
+                SizedBox(height: 30,),
+               const  TextField(
+                  decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 223, 220, 220),
+                    filled: true,
+                    hintText: "Enter second number"
+                  ),
+                ),
+                SizedBox(height: 30,),
+                ElevatedButton(
+                  onPressed: () {}, 
+                  
+                  child: Text('ADD'),
+                  style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 240, 58, 82)),
+                ),
+                SizedBox(height: 20,),
+                ElevatedButton(
+                  onPressed: () {}, 
+                  child: Text('SUBTRACT'),
+                  style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 240, 58, 82)),
+                ),
+                SizedBox(height: 20,),
+                ElevatedButton(
+                  onPressed: () {}, 
+                  child: Text('MULTIPLY'),
+                  style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 240, 58, 82)),
+                  
+                ),
+                SizedBox(height: 20,),
+                ElevatedButton(
+                  onPressed: () {}, 
+                  child: Text('DIVIDE'),
+                  style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 240, 58, 82)),
+                )
+              ],
+              ),
+          ),
+          /*body: Column(
+            children: const <Widget>[
+              Text('Result : ', style: TextStyle(fontSize: 26, color: Colors.black ))
+            ],
+          
+          ),*/
+           
         )
       );
   }

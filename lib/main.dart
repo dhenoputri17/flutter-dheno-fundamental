@@ -35,9 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
   int? result = 0, num1 = 0, num2 = 0;
 
   reset() {
-    result = 0;
-    bil1.clear();
-    bil2.clear();
+    setState(() {
+      result = 0;
+      bil1.clear();
+      bil2.clear();
+    });
   }
 
   add() {
@@ -150,6 +152,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 divide();
               },
               child: Text('DIVIDE'),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 240, 58, 82)),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                reset();
+              },
+              child: Text('RESET'),
               style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 240, 58, 82)),
             )
